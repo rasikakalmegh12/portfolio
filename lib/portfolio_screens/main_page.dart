@@ -7,6 +7,7 @@ import 'about_section.dart';
 import 'contact_section.dart';
 import 'experience_section.dart';
 import 'hero_section.dart';
+import 'navbar_section.dart';
 
 class PortfolioHome extends StatelessWidget {
   const PortfolioHome({super.key});
@@ -27,6 +28,7 @@ class PortfolioHome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+            NavigationBarSection(),
             HeroSection(),
             SizedBox(height: 40),
             AboutSection(),
