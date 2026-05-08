@@ -14,7 +14,7 @@ class AboutSection extends StatelessWidget {
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
           SizedBox(height: 20),
           Text(
-              "Flutter developer with 1.8+ years of experience building Android and iOS apps. Experienced in REST API integration, real-time tracking systems, and Google Maps implementations."),
+              "Flutter Developer with 2+ years of experience designing, developing, and deploying scalable cross- platform mobile applications for Android and iOS. Proﬁcient in Flutter, Dart, RESTful API integration, Firebase, and state management (Bloc/Provider). Experienced in building real-time tracking systems, offline-ﬁrst applications, and responsive UI/UX. Strong ability to optimize performance, debug issues, and deliver high-quality applications in fast-paced environments. Available for immediate joining."),
         ],
       ),
     );

@@ -21,7 +21,8 @@ class PortfolioHome extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(16),
             child: Text("Flutter Developer"),
-          )
+          ),
+
         ],
       ),
       body: SingleChildScrollView(

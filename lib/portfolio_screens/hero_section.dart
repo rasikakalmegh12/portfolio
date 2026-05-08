@@ -1,6 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/utils/download_utils.dart';
 
 // class HeroSection extends StatelessWidget {
 //   const HeroSection({super.key});
@@ -165,13 +166,40 @@ class HeroSection extends StatelessWidget {
               .animate()
               .fade(delay: 200.ms)
               .slideY(),
-          const SizedBox(height: 10),
-          const Text("Flutter Mobile App Developer",
-              style:
-              TextStyle(fontSize: 24, color: Colors.tealAccent))
-              .animate()
-              .fade(delay: 400.ms)
-              .slideX(),
+          // const SizedBox(height: 10),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+
+                SizedBox(
+                  height: 50, // Fixed height to prevent layout jumping
+                  child: DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 40.0,
+                      fontFamily: 'Horizon',
+                    ),
+                    child: AnimatedTextKit(
+                      repeatForever: true,
+                      animatedTexts: [
+                        RotateAnimatedText('Flutter Developer', textStyle: TextStyle(color: Colors.teal, fontSize: 26, fontWeight: FontWeight.bold)),
+                        RotateAnimatedText('Mobile App Developer', textStyle: TextStyle(color: Colors.teal, fontSize: 26, fontWeight: FontWeight.bold)),
+                        RotateAnimatedText('Android Developer', textStyle: TextStyle(color: Colors.teal, fontSize: 26, fontWeight: FontWeight.bold)),
+                        RotateAnimatedText('IOS Developer', textStyle: TextStyle(color: Colors.teal, fontSize: 26, fontWeight: FontWeight.bold)),
+                      ],
+                      onTap: () {
+                        print("Tap Event");
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          // const Text("Flutter Mobile App Developer",
+          //     style:
+          //     TextStyle(fontSize: 24, color: Colors.tealAccent))
+          //     .animate()
+          //     .fade(delay: 400.ms)
+          //     .slideX(),
           const SizedBox(height: 20),
           const SizedBox(
             width: 450,
@@ -194,8 +222,15 @@ class HeroSection extends StatelessWidget {
                     ),
                     const SizedBox(width: 20),
                     OutlinedButton(
-                      onPressed: () {},
-                      child: const Text("Download Resume"),
+                      onPressed: downloadResume,
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                        side: const BorderSide(color: Colors.white),
+                      ),
+                      child: const Text(
+                        "Download Resume",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     )
                   ],
                 ).animate().fade(delay: 800.ms)
@@ -217,3 +252,4 @@ class HeroSection extends StatelessWidget {
     );
   }
 }
+
